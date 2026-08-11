@@ -18,7 +18,7 @@ def _logo_base64() -> str | None:
 
 
 def render_sidebar() -> str:
-    """Affiche la navigation laterale et retourne la page selectionnee."""
+    
     with st.sidebar:
         logo_b64 = _logo_base64()
         logo_html = (
@@ -40,10 +40,5 @@ def render_sidebar() -> str:
         selected_label = st.radio("Section", labels, label_visibility="collapsed")
         page = PAGES[labels.index(selected_label)]
 
-        st.markdown("---")
-        st.caption(
-            "Les analyses presentees sont issues de EDA_Eau_Togo.ipynb. "
-            "Aucun indicateur n'est recalcule avec des hypotheses differentes de celles "
-            "documentees dans l'etude de reference."
-        )
+        
     return page
