@@ -52,8 +52,15 @@ CUSTOM_CSS = f"""
     #MainMenu {{visibility: hidden;}}
     footer {{visibility: hidden;}}
 
+    /* Le bandeau d'outils Streamlit (position fixe) reste au-dessus du contenu :
+       on reserve assez d'espace en haut du conteneur principal pour que le
+       bandeau institutionnel ne soit jamais masque ou tronque en haut de page. */
+    header[data-testid="stHeader"] {{
+        background: {COLOR_WHITE};
+    }}
+
     .block-container {{
-        padding-top: 1.2rem;
+        padding-top: 3.4rem;
         padding-bottom: 2rem;
         max-width: 1200px;
     }}
@@ -170,7 +177,7 @@ CUSTOM_CSS = f"""
         border-right: 1px solid #E4E7EB;
     }}
     section[data-testid="stSidebar"] > div:first-child {{
-        padding-top: 0.6rem;
+        padding-top: 2.6rem;
     }}
 
     /* Bloc logo + identite, en tete de la sidebar */
