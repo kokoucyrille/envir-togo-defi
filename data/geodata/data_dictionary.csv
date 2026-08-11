@@ -1,0 +1,126 @@
+Dataset,Variable,Type,% manquant,Valeurs distinctes,Description
+fri_cantons,region_id,str,0.0,5,
+fri_cantons,region_nom,str,0.0,5,Nom de la region administrative
+fri_cantons,prefecture,str,0.0,39,Code de la prefecture
+fri_cantons,prefectu_1,str,0.0,39,Nom de la prefecture
+fri_cantons,commune_id,str,0.0,117,
+fri_cantons,commune_no,str,0.0,116,Nom de la commune
+fri_cantons,canton_id,str,0.0,388,
+fri_cantons,canton_nom,str,0.0,387,Nom du canton
+fri_cantons,canton_n_1,str,0.0,387,
+fri_cantons,grand_lome,int64,0.0,2,Indicateur d'appartenance au Grand Lome
+fri_cantons,Duplicata,float64,0.0,20,
+fri_cantons,canton_index,int64,0.0,388,
+fri_cantons,max_fsi,float64,0.0,280,"Indice de susceptibilite aux inondations (FSI), valeur maximale observee dans le canton"
+fri_cantons,total_pop,float64,0.0,387,Population totale estimee du canton (source raster demographique)
+fri_cantons,min_rwi,float64,0.0,306,Relative Wealth Index minimal du canton (proxy de vulnerabilite economique ; plus bas = plus pauvre)
+fri_cantons,urban_ratio,float64,0.0,51,Part de la surface / des batiments du canton en zone urbaine
+fri_cantons,building_count,float64,0.0,79,Nombre de batiments detectes dans le canton
+fri_cantons,min_dist_basin,float64,0.0,192,Distance minimale a un bassin hydrographique (proxy d'exposition hydrologique)
+fri_cantons,max_crop_prob,float64,0.0,388,Probabilite maximale de presence de cultures (occupation du sol)
+fri_cantons,norm_fsi,float64,0.0,280,FSI normalise entre 0 et 1
+fri_cantons,norm_pop,float64,0.0,387,Population normalisee entre 0 et 1
+fri_cantons,norm_rwi,float64,0.0,306,RWI normalise entre 0 et 1
+fri_cantons,norm_urban,float64,0.0,51,Ratio urbain normalise
+fri_cantons,norm_build,float64,0.0,79,Nombre de batiments normalise
+fri_cantons,norm_dist_basin,float64,0.0,192,Distance au bassin normalisee
+fri_cantons,norm_crop,float64,0.0,388,Probabilite de cultures normalisee
+fri_cantons,FRI,float64,0.0,388,Flood Risk Index -- indice agrege de risque d'inondation du canton (0-1)
+coso_subprojects,id,int32,0.0,218,
+coso_subprojects,number,int32,0.0,218,
+coso_subprojects,joint_subproject_number,int32,0.0,212,
+coso_subprojects,title,str,0.0,133,Intitule du sous-projet
+coso_subprojects,type,str,0.0,6,Type d'ouvrage finance
+coso_subprojects,subproject_type_designation,str,0.0,2,
+coso_subprojects,sector,str,0.0,1,Secteur d'intervention (Eau-Hydraulique)
+coso_subprojects,works_type,str,2.3,3,Nature des travaux (construction / rehabilitation)
+coso_subprojects,component,str,0.0,3,
+coso_subprojects,projects,str,0.0,2,
+coso_subprojects,financiers,str,0.0,1,
+coso_subprojects,status,str,0.0,6,Etape administrative d'avancement du sous-projet
+coso_subprojects,current_status_of_the_site,str,0.0,4,
+coso_subprojects,progress_percent,float64,12.8,4,Pourcentage d'avancement physique
+coso_subprojects,progress_value,float64,0.0,4,
+coso_subprojects,estimated_cost,float64,1.8,12,Cout estime du sous-projet (FCFA)
+coso_subprojects,contract_amount_work_companies,float64,1.4,169,
+coso_subprojects,total_contract_amount_paid,float64,1.4,172,
+coso_subprojects,amount_of_the_care_and_maintenance_fund_expected,float64,85.3,2,
+coso_subprojects,care_and_maintenance_amount_on_village_account,float64,34.4,72,
+coso_subprojects,date_signature_contract_work_companies,datetime64[ms],5.0,98,
+coso_subprojects,date_signature_contract_efme,datetime64[ms],92.7,11,
+coso_subprojects,contract_companies_amount_for_efme,float64,90.4,18,
+coso_subprojects,date_signature_contract_controllers_in_SES,datetime64[ms],89.0,11,
+coso_subprojects,date_of_signature_of_contract_for_construction_supervisors,datetime64[ms],90.8,12,
+coso_subprojects,approval_date_cora,datetime64[ms],26.6,11,
+coso_subprojects,launch_date,datetime64[ms],3.2,118,Date de lancement des travaux
+coso_subprojects,expected_duration,float64,0.0,7,
+coso_subprojects,expected_end_date,datetime64[ms],5.0,118,
+coso_subprojects,work_completion_date,datetime64[ms],0.0,127,Date d'achevement des travaux
+coso_subprojects,date_of_technical_acceptance_of_work,datetime64[ms],43.1,96,
+coso_subprojects,date_of_provisional_acceptance_of_work,datetime64[ms],9.2,118,
+coso_subprojects,official_handover_date_to_community,datetime64[ms],49.5,61,
+coso_subprojects,existence_of_maintenance_plan,bool,0.0,2,
+coso_subprojects,wave,str,5.0,8,Vague de financement / deploiement du programme COSO
+coso_subprojects,number_of_classrooms,float64,2.3,1,
+coso_subprojects,number_of_infrastructures,int32,0.0,1,
+coso_subprojects,population,float64,8.7,179,Population beneficiaire declaree
+coso_subprojects,direct_beneficiaries_men,float64,9.2,173,Beneficiaires directs hommes
+coso_subprojects,direct_beneficiaries_women,float64,9.2,175,Beneficiaires directs femmes
+coso_subprojects,women_s_group,str,20.2,1,
+coso_subprojects,youth_group,str,39.4,1,
+coso_subprojects,breeders_farmers_group,str,25.2,1,
+coso_subprojects,ethnic_minority_group,str,36.7,1,
+coso_subprojects,date_of_organization_of_the_social_audit,datetime64[ms],33.5,103,
+coso_subprojects,number_of_participants_m_in_social_audit,float64,33.5,59,
+coso_subprojects,number_of_participants_w_in_social_audit,float64,33.5,73,
+coso_subprojects,number_of_participants_t_in_social_audit,float64,33.5,80,
+coso_subprojects,beneficiary_villages_count,int32,0.0,15,
+coso_subprojects,beneficiary_villages,str,0.0,210,
+coso_subprojects,list_of_villages_crossed_by_track_or_electrification,object,0.0,1,
+coso_subprojects,infrastructure_changed,str,78.0,1,
+coso_subprojects,infrastructure_deleted,bool,0.0,1,
+coso_subprojects,level_of_achievement_donation_certificate,str,43.1,10,
+coso_subprojects,comments,str,90.4,14,
+coso_subprojects,location_name,str,0.0,213,
+coso_subprojects,latitude,float64,27.1,86,Latitude (WGS84)
+coso_subprojects,longitude,float64,27.1,85,Longitude (WGS84)
+coso_subprojects,hierarchy,str,0.0,213,Chaine hierarchique village > canton > commune > prefecture > region
+coso_subprojects,link_to_subproject,float64,56.9,90,
+coso_subprojects,depth_of_drilling,float64,62.4,62,Profondeur de forage (m)
+coso_subprojects,drilling_flow_rate,float64,63.8,49,Debit du forage (m3/h)
+coso_subprojects,number_of_latrine_blocks,float64,97.2,1,
+coso_subprojects,has_latrine_blocs,object,100.0,0,
+coso_subprojects,storage_capacity,object,100.0,0,
+coso_subprojects,official_handover_date_to_sector,datetime64[ms],95.9,3,
+coso_subprojects,length_of_the_track,object,100.0,0,
+coso_subprojects,extension_length,object,100.0,0,
+coso_subprojects,number_of_drinking_fountains,float64,99.1,1,
+coso_subprojects,estimated_number_of_beneficiaries,float64,57.8,73,
+coso_subprojects,refugee_and_internally_displaced_persons_group,str,82.1,1,
+coso_subprojects,has_fence,object,100.0,0,
+coso_subprojects,number_of_sections_of_track_developed,float64,98.6,2,
+coso_subprojects,amount_of_the_controllers_contract_in_SES,float64,96.3,2,
+coso_subprojects,amount_of_the_contract_for_construction_supervisors,float64,96.3,2,
+coso_subprojects,date_signature_contract_facilitator,datetime64[ms],96.3,1,
+coso_subprojects,amount_of_the_facilitator_contract,float64,96.3,1,
+coso_subprojects,amount_spent_on_completing_the_infrastructure,float64,95.9,9,
+coso_subprojects,amount_spent_on_infrastructure_up_to_provisional_acceptance,float64,97.7,5,
+coso_subprojects,number_of_streetlights,float64,98.6,2,
+coso_subprojects,distance_covered_by_streetlights,object,100.0,0,
+coso_subprojects,canton,str,92.2,12,
+coso_subprojects,market_name,str,95.9,9,
+tde_forages_chateaux,FID,str,0.0,67,
+tde_forages_chateaux,region_nom_bdd,str,0.0,3,xsd:string
+tde_forages_chateaux,prefecture_nom_bdd,str,0.0,8,xsd:string
+tde_forages_chateaux,commune_nom_bdd,str,0.0,17,xsd:string
+tde_forages_chateaux,canton_nom_bdd,str,0.0,22,xsd:string
+tde_forages_chateaux,forage_chateau_nom,str,0.0,18,xsd:string
+tde_forages_chateaux,organisme,str,0.0,1,xsd:string
+tde_consommation,indicateur,str,0.0,9,Segment de clientele de la Togolaise des Eaux
+tde_consommation,Unit,str,0.0,1,Unite de mesure (m3)
+tde_consommation,Date,int64,0.0,5,Annee d'observation
+tde_consommation,Value,int64,0.0,34,Volume d'eau factures (m3)
+recensement_2010,indicateurs,str,0.0,548,"Nom de l'unite administrative (pays, region, prefecture, commune, canton, village)"
+recensement_2010,Unit,float64,100.0,0,Unite de mesure (non renseignee -- effectifs de population)
+recensement_2010,Date,int64,0.0,1,Annee du recensement
+recensement_2010,Value,int64,0.0,547,Population recensee
