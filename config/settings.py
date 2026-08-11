@@ -50,12 +50,7 @@ AUTHOR_GITHUB = "https://github.com/kokoucyrille/"
 # Navigation (5 sections, conformement au cahier des charges)
 # ---------------------------------------------------------------------------
 PAGES = [
-    "Vue nationale",
-    "Infrastructures",
-    "Besoins et deficits",
-    "Risques",
-    "Priorites et scenarios",
-    "A propos et methodologie",
+    ''
 ]
 
 # ---------------------------------------------------------------------------

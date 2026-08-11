@@ -46,7 +46,24 @@ def main() -> None:
 
     page = render_sidebar()
 
-    
+    if page == "Vue nationale":
+        from pages import vue_nationale
+        vue_nationale.render(cantons_geo, cantons_table, top20, infrastructures)
+    elif page == "Infrastructures":
+        from pages import infrastructures as infrastructures_page
+        infrastructures_page.render(cantons_geo, infrastructures, infra_full_coso)
+    elif page == "Besoins et deficits":
+        from pages import besoins_deficits
+        besoins_deficits.render(cantons_geo, cantons_table)
+    elif page == "Risques":
+        from pages import risques
+        risques.render(cantons_geo, cantons_table, infrastructures)
+    elif page == "Priorites et scenarios":
+        from pages import priorites_scenarios
+        priorites_scenarios.render(cantons_table, top20)
+    elif page == "A propos et methodologie":
+        from pages import a_propos
+        a_propos.render(data_dictionary)
 
     render_footer()
 
