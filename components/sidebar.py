@@ -9,16 +9,6 @@ import streamlit as st
 
 from config.settings import INSTITUTION_LINE_1, INSTITUTION_LINE_2, LOGO_PATH, PAGES
 
-# Icone associee a chaque section du menu (contexte eau / environnement / decision)
-PAGE_ICONS = {
-    "Vue nationale": "\U0001F30D",              # globe
-    "Infrastructures": "\U0001F6B0",             # robinet
-    "Besoins et deficits": "\U0001F4CA",         # graphique
-    "Risques": "\u26A0\uFE0F",                   # alerte
-    "Priorites et scenarios": "\U0001F3AF",      # cible
-    "A propos et methodologie": "\u2139\uFE0F",  # info
-}
-
 
 def _logo_base64() -> str | None:
     if not os.path.exists(LOGO_PATH):
@@ -46,7 +36,7 @@ def render_sidebar() -> str:
         )
 
         st.markdown('<p class="sidebar-section-label">Navigation</p>', unsafe_allow_html=True)
-        labels = [f"{PAGE_ICONS.get(p, '')}  {p}" for p in PAGES]
+        labels = [f"{i:02d}  {p}" for i, p in enumerate(PAGES, start=1)]
         selected_label = st.radio("Section", labels, label_visibility="collapsed")
         page = PAGES[labels.index(selected_label)]
 

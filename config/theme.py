@@ -241,6 +241,8 @@ CUSTOM_CSS = f"""
         font-weight: 500;
         color: #1F2A24;
         margin: 0;
+        letter-spacing: 0.01em;
+        font-variant-numeric: tabular-nums;
     }}
     /* Element actif du menu */
     section[data-testid="stSidebar"] div[role="radiogroup"] label:has(input:checked) {{
