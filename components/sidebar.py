@@ -1,57 +1,54 @@
-"""Navigation laterale de l'application.
-
-Sidebar fond vert institutionnel avec :
-  - logo centre sur fond blanc
-  - titre de section en lettres capitales discretes
-  - items de navigation au style bouton (item actif blanc/vert fonce, inactifs blancs transparents)
-  - note methodologique en bas
-"""
+"""Navigation laterale de l'application (cinq sections analytiques + page A propos)."""
 
 from __future__ import annotations
 
+import base64
 import os
 
 import streamlit as st
 
-from config.settings import LOGO_PATH, PAGES
+from config.settings import INSTITUTION_LINE_1, INSTITUTION_LINE_2, LOGO_PATH, PAGES
 
-# Icones associees a chaque section (emoji minimaliste)
-_PAGE_ICONS: dict[str, str] = {
-    "Vue nationale":              "🗺️",
-    "Infrastructures":            "🔧",
-    "Besoins et deficits":        "💧",
-    "Risques":                    "⚠️",
-    "Priorites et scenarios":     "📊",
-    "A propos et methodologie":   "ℹ️",
+# Icone associee a chaque section du menu (contexte eau / environnement / decision)
+PAGE_ICONS = {
+    "Vue nationale": "\U0001F30D",              # globe
+    "Infrastructures": "\U0001F6B0",             # robinet
+    "Besoins et deficits": "\U0001F4CA",         # graphique
+    "Risques": "\u26A0\uFE0F",                   # alerte
+    "Priorites et scenarios": "\U0001F3AF",      # cible
+    "A propos et methodologie": "\u2139\uFE0F",  # info
 }
+
+
+def _logo_base64() -> str | None:
+    if not os.path.exists(LOGO_PATH):
+        return None
+    with open(LOGO_PATH, "rb") as f:
+        return base64.b64encode(f.read()).decode("utf-8")
 
 
 def render_sidebar() -> str:
     """Affiche la navigation laterale et retourne la page selectionnee."""
     with st.sidebar:
-        # Logo centre sur fond blanc (cadre clair)
-        if os.path.exists(LOGO_PATH):
-            st.image(str(LOGO_PATH), use_container_width=True)
-        else:
-            st.markdown(
-                "<p style='color:rgba(255,255,255,0.6);font-size:0.75rem;"
-                "text-align:center;padding:0.5rem 0;'>Logo institutionnel</p>",
-                unsafe_allow_html=True,
-            )
-
-        st.markdown("### Navigation")
-
-        # Radio avec libelles enrichis d'icones
-        labeled_pages = [f"{_PAGE_ICONS.get(p, '•')}  {p}" for p in PAGES]
-        selected_label = st.radio(
-            "Section",
-            labeled_pages,
-            label_visibility="collapsed",
+        logo_b64 = _logo_base64()
+        logo_html = (
+            f'<img src="data:image/png;base64,{logo_b64}" width="72" />' if logo_b64 else ""
+        )
+        st.markdown(
+            f"""
+            <div class="sidebar-brand">
+                {logo_html}
+                <p class="brand-title">{INSTITUTION_LINE_1}</p>
+                <p class="brand-subtitle">{INSTITUTION_LINE_2}</p>
+            </div>
+            """,
+            unsafe_allow_html=True,
         )
 
-        # Retrouver le nom de page original (sans icone)
-        idx = labeled_pages.index(selected_label)
-        page = PAGES[idx]
+        st.markdown('<p class="sidebar-section-label">Navigation</p>', unsafe_allow_html=True)
+        labels = [f"{PAGE_ICONS.get(p, '')}  {p}" for p in PAGES]
+        selected_label = st.radio("Section", labels, label_visibility="collapsed")
+        page = PAGES[labels.index(selected_label)]
 
         st.markdown("---")
         st.caption(
@@ -59,5 +56,4 @@ def render_sidebar() -> str:
             "Aucun indicateur n'est recalcule avec des hypotheses differentes de celles "
             "documentees dans l'etude de reference."
         )
-
     return page

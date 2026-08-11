@@ -11,8 +11,9 @@ def render_footer() -> None:
     st.markdown(
         f"""
         <div class="app-footer">
-            <strong>{APP_TITLE}</strong><br>
-            Application d'aide a la decision &mdash; {AUTHOR_NAME} &bull; {AUTHOR_TITLE}
+            {APP_TITLE}<br>
+            Application d'aide a la decision<br>
+            {AUTHOR_NAME} -- {AUTHOR_TITLE}
         </div>
         """,
         unsafe_allow_html=True,
